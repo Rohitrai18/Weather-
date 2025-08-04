@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherWave - Real-Time Weather</title>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+    </style>
+</head>
+<>
+    <div class="container">
+        <div class="weather-app">
+            <div class="header">
+                <h1 class="app-title">WeatherWave</h1>
+                <button class="refresh-btn" id="refreshBtn">
+                    <i class="fas fa-sync-alt"></i>
+                </button>
+            </div>
+            
+            <div class="search-container">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search city..." autocomplete="off">
+                <button class="search-btn" id="searchBtn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            
+            <div class="loading" id="loadingSpinner"></div>
+            
+            <div class="weather-info" id="weatherInfo">
+                <h2 class="location" id="location">New York</h2>
+                <p class="date" id="date">Monday, January 1, 2023</p>
+                <img src="https://openweathermap.org/img/wn/01d@2x.png" alt="Weather icon" class="weather-icon" id="weatherIcon">
+                <p class="temperature" id="temperature">24</p>
+                <p class="weather-description" id="weatherDescription">Sunny</p>
+                
+                <div class="weather-details">
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-temperature-high"></i>
+                        </div>
+                        <div class="detail-text">
+                            <p class="detail-title">Feels Like</p>
+                            <p class="detail-value" id="feelsLike">25°C</p>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <div class="detail-text">
+                            <p class="detail-title">Humidity</p>
+                            <p class="detail-value" id="humidity">65%</p>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-wind"></i>
+                        </div>
+                        <div class="detail-text">
+                            <p class="detail-title">Wind Speed</p>
+                            <p class="detail-value" id="windSpeed">12 km/h</p>
+                        </div>
+                    </div>
+                    
+                    <div class="detail-card">
+                        <div class="detail-icon">
+                            <i class="fas fa-compress-alt"></i>
+                        </div>
+                        <div class="detail-text">
+                            <p class="detail-title">Pressure</p>
+                            <p class="detail-value" id="pressure">1012 hPa</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="forecast-container">
+                    <h3 class="forecast-title">5-Day Forecast</h3>
+                    <div class="forecast-items" id="forecastItems">
+                        <!-- Forecast items will be added here dynamically -->
+                    </div>
+                </div>
+            </div>
+            
+            <p class="error-message" id="errorMessage">
+                City not found. Please try another location.
+            </p>
+        </div>
+        <script src="home.js"></script>
+    </div>
+    <script>
+    
